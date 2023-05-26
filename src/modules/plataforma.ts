@@ -1,8 +1,5 @@
 import { serie } from "./serie.js"
-export type plan = {
-    plan: string,
-    precio: string
-}
+import { plan } from "./types.js"
 
 export class Plataforma{
     private nombre: string
