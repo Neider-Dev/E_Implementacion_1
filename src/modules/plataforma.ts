@@ -1,13 +1,15 @@
-import { serie } from "./serie.js"
+import { Serie } from "./serie.js"
 import { plan } from "./types.js"
+
+export let plataformas: Plataforma[] = [];
 
 export class Plataforma{
     private nombre: string
     private sitio_Web: string
     private planes: plan[]
-    private series: serie[]
+    private series: Serie[]
 
-    constructor(nombre:string, sitio_Web:string, planes:plan[], serie?:serie){
+    constructor(nombre:string, sitio_Web:string, planes:plan[], serie?:Serie){
         this.nombre = nombre;
         this.sitio_Web = sitio_Web;
         this.planes = planes;
@@ -43,11 +45,11 @@ export class Plataforma{
         return this.sitio_Web;
     }
 
-    getSeries(): serie[]{
+    getSeries(): Serie[]{
         return this.series;
     }
 
-    agregarSeries(serie?:serie, series?:serie[]): void{
+    agregarSeries(serie?:Serie, series?:Serie[]): void{
         if(serie){
             this.series.push(serie);
         }else if(series){
@@ -56,4 +58,8 @@ export class Plataforma{
             })
         }
     }
+}
+
+export function crarPlataforma(nombre:string, sitio_Web:string, planes:plan[], serie?:Serie){
+    plataformas.push(new Plataforma(nombre, sitio_Web, planes, serie));
 }

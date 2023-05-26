@@ -1,3 +1,5 @@
+export let actores = [];
+export let directores = [];
 class Personal {
     constructor(nombre, fotografia, descripcion) {
         this.nombre = nombre;
@@ -26,4 +28,10 @@ export class Director extends Personal {
     agregarSerie(serie) {
         this.proyectos.push(serie);
     }
+}
+export function crearActor(nombre, fotografia, descripcion, serie) {
+    actores.push(new Actor(nombre, fotografia, descripcion, serie));
+}
+export function crearDirector(nombre, fotografia, descripcion, serie) {
+    directores.push(new Director(nombre, fotografia, descripcion, serie));
 }

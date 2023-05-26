@@ -1,3 +1,4 @@
+export let plataformas = [];
 export class Plataforma {
     constructor(nombre, sitio_Web, planes, serie) {
         this.nombre = nombre;
@@ -41,4 +42,7 @@ export class Plataforma {
             });
         }
     }
+}
+export function crarPlataforma(nombre, sitio_Web, planes, serie) {
+    plataformas.push(new Plataforma(nombre, sitio_Web, planes, serie));
 }

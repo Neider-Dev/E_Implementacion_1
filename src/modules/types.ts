@@ -13,7 +13,9 @@ export let  categorias= {
     suspenso: "Suspenso"
 }
 
-
+export function crearCategoria(clave:string, valor: string):void{
+    Object.defineProperty(categorias, clave, {value: valor, writable: false});
+}
 
 
 
