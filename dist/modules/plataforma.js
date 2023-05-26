@@ -1,8 +1,11 @@
 export class Plataforma {
-    constructor(nombre, sitio_Web, planes) {
+    constructor(nombre, sitio_Web, planes, serie) {
         this.nombre = nombre;
         this.sitio_Web = sitio_Web;
         this.planes = planes;
+        this.series = [];
+        if (serie)
+            this.series.push(serie);
     }
     setNombre(nombre) {
         this.nombre = nombre;
@@ -24,5 +27,18 @@ export class Plataforma {
     }
     getSitio_Web() {
         return this.sitio_Web;
+    }
+    getSeries() {
+        return this.series;
+    }
+    agregarSeries(serie, series) {
+        if (serie) {
+            this.series.push(serie);
+        }
+        else if (series) {
+            series.forEach(serier => {
+                this.series.push(serier);
+            });
+        }
     }
 }

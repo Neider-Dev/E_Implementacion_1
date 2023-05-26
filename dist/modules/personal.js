@@ -6,14 +6,24 @@ class Personal {
     }
 }
 export class Actor extends Personal {
-    constructor(nombre, fotografia, descripcion, series) {
+    constructor(nombre, fotografia, descripcion, serie) {
         super(nombre, fotografia, descripcion);
-        this.series = series;
+        this.series = [];
+        if (serie)
+            this.series.push(serie);
+    }
+    agregarSerie(serie) {
+        this.series.push(serie);
     }
 }
 export class Director extends Personal {
-    constructor(nombre, fotografia, descripcion, series) {
+    constructor(nombre, fotografia, descripcion, proyecto) {
         super(nombre, fotografia, descripcion);
-        this.series = series;
+        this.proyectos = [];
+        if (proyecto)
+            this.proyectos.push(proyecto);
+    }
+    agregarSerie(serie) {
+        this.proyectos.push(serie);
     }
 }
