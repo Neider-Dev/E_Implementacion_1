@@ -5,6 +5,7 @@ import { Plataforma } from "./plataforma.js"
 export let series: Serie[] = [];
 
 export class Serie{
+    nombre: string
     private imagen: string
     categorias: string[]
     directores: Director[]
@@ -12,7 +13,8 @@ export class Serie{
     episodios: Episodio[]
     plataformas: Plataforma[]
 
-    constructor(imagen:string, categoria:string | string[], directores:Director[], actores:Actor[], episodio?: Episodio, plataforma?: Plataforma){
+    constructor(nombre:string, imagen:string, categoria:string | string[], directores:Director[], actores:Actor[], episodio?: Episodio, plataforma?: Plataforma){
+        this.nombre = nombre;
         this.imagen = imagen;
         this.directores = directores;
         this.actores = actores;
@@ -63,7 +65,14 @@ export class Serie{
 
 }
 
-export function crearSerie(imagen:string, categoria:string|string[], directores:Director[],actores:Actor[], episodio?:Episodio, plataforma?:Plataforma): void{
-    series.push(new Serie(imagen, categoria, directores, actores, episodio, plataforma));
+export function crearSerie(nombre:string ,imagen:string, categoria:string|string[], directores:Director[],actores:Actor[], episodio?:Episodio, plataforma?:Plataforma): void{
+    series.push(new Serie(nombre ,imagen, categoria, directores, actores, episodio, plataforma));
 }
 
+export function mostrarListado():void{
+    series.forEach(serie => console.log(serie))
+}
+
+export function buscarSerie(nombre:string): Serie | undefined{
+    return series.find(serie => serie.nombre == nombre)
+}

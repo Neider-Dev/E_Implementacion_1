@@ -1,10 +1,10 @@
-import { serie } from "./serie.js"
+import { Serie } from "./serie.js"
 export class Episodio{
-    serie: serie
+    serie: Serie
     resumen: string
     duracion: number
 
-    constructor(serie:serie, resumen:string, duracion:number){
+    constructor(serie:Serie, resumen:string, duracion:number){
         this.serie = serie;
         this.resumen = resumen;
         this.duracion = duracion;

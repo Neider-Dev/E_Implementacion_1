@@ -1,6 +1,7 @@
 export let series = [];
 export class Serie {
-    constructor(imagen, categoria, directores, actores, episodio, plataforma) {
+    constructor(nombre, imagen, categoria, directores, actores, episodio, plataforma) {
+        this.nombre = nombre;
         this.imagen = imagen;
         this.directores = directores;
         this.actores = actores;
@@ -44,6 +45,12 @@ export class Serie {
         return this.imagen;
     }
 }
-export function crearSerie(imagen, categoria, directores, actores, episodio, plataforma) {
-    series.push(new Serie(imagen, categoria, directores, actores, episodio, plataforma));
+export function crearSerie(nombre, imagen, categoria, directores, actores, episodio, plataforma) {
+    series.push(new Serie(nombre, imagen, categoria, directores, actores, episodio, plataforma));
+}
+export function mostrarListado() {
+    series.forEach(serie => console.log(serie));
+}
+export function buscarSerie(nombre) {
+    return series.find(serie => serie.nombre == nombre);
 }
