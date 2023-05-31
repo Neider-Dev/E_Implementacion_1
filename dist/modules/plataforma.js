@@ -46,3 +46,9 @@ export class Plataforma {
 export function crarPlataforma(nombre, sitio_Web, planes, serie) {
     plataformas.push(new Plataforma(nombre, sitio_Web, planes, serie));
 }
+export function listarPlataformas() {
+    plataformas.forEach(plataforma => console.log(plataforma.getNombre()));
+}
+export function buscarPlataforma(nombre) {
+    return plataformas.find(Plataforma => Plataforma.getNombre() === nombre);
+}

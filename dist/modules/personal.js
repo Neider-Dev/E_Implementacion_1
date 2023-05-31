@@ -35,3 +35,15 @@ export function crearActor(nombre, fotografia, descripcion, serie) {
 export function crearDirector(nombre, fotografia, descripcion, serie) {
     directores.push(new Director(nombre, fotografia, descripcion, serie));
 }
+export function listarActores() {
+    actores.forEach(actor => console.log(actor.nombre));
+}
+export function listarDirectores() {
+    directores.forEach(director => console.log(director.nombre));
+}
+export function buscarActor(nombre) {
+    return actores.find(actor => actor.nombre === nombre);
+}
+export function buscarDirector(nombre) {
+    return directores.find(director => director.nombre === nombre);
+}

@@ -4,7 +4,9 @@ export class Serie {
         this.nombre = nombre;
         this.imagen = imagen;
         this.directores = directores;
+        this.directores.forEach(director => director.agregarSerie(this));
         this.actores = actores;
+        this.actores.forEach(actor => actor.agregarSerie(this));
         this.categorias = this.asignarCategoria(categoria);
         this.episodios = [];
         if (episodio)

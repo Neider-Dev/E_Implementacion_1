@@ -1,6 +1,7 @@
 import { Episodio } from "./episodio.js"
 import { Director,Actor } from "./personal.js"
 import { Plataforma } from "./plataforma.js"
+import * as Personal from "./personal.js"
 
 export let series: Serie[] = [];
 
@@ -17,7 +18,9 @@ export class Serie{
         this.nombre = nombre;
         this.imagen = imagen;
         this.directores = directores;
+        this.directores.forEach(director => director.agregarSerie(this))
         this.actores = actores;
+        this.actores.forEach(actor => actor.agregarSerie(this))
         this.categorias = this.asignarCategoria(categoria);
         this.episodios = [];
         if(episodio)this.episodios.push(episodio);
